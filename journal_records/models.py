@@ -8,5 +8,5 @@ class Topic(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __string__(self):
-        """Define a string representation of the string."""
+        """Return a string representation of the model."""
         return self.text
