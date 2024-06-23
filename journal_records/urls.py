@@ -7,4 +7,5 @@ from . import views
 app_name = "journal_records"
 urlpatterns = [
     path("", views.index, name="index"),
+    path("topics/", views.topics, name="topics"),
 ]
