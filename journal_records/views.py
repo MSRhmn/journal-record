@@ -52,6 +52,7 @@ def new_entry(request, topic_id):
         form = EntryForm(data=request.POST)
         if form.is_valid():
             new_entry = form.save(commit=False)
+            new_entry.topic = topic
             new_entry.save()
             return redirect("journal_records:topic", topic_id=topic_id)
 
