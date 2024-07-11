@@ -1,6 +1,7 @@
 {% extends "journal_records/base.html" %}
 
 {% block content %}
+
   <p>
     <a href="{% url 'journal_records:topic' topic.id %}">{{ topic }}</a>
   </p>
@@ -11,4 +12,5 @@
     {{ form.as_div }}
     <button name="submit">Save changes</button>
   </form>
+
 {% endblock content %}
