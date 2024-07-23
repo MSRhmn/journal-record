@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My apps
     "journal_records",
+    "accounts",
     # Default django apps
     "django.contrib.admin",
     "django.contrib.auth",
