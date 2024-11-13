@@ -1,7 +1,13 @@
 {% extends "journal_records/base.html" %}
 
-{% block content %}
-
-  <p>Journal Record helps you to keep track of your journals.</p>
-
-{% endblock content %}
+{% block page_header %}
+  <div class="p-3 mb-4 bg-light border rounded-3">
+    <div class="container-fluid py-4">
+      <h1 class="display-3">Track your record</h1>
+      
+      <p class="lead">Write your own journal record, and keep a list of the topic you're writing about. Whenever you're writing about a new topic, make an entry summarizing about it.</p>
+      
+      <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}">Register &raquo;</a>
+    </div>
+  </div>
+{% endblock %}
