@@ -1,19 +1,20 @@
 {% extends "journal_records/base.html" %}
 
+{% block page_header %}
+  <h1>Topics</h1>
+{% endblock %}
+
 {% block content %}
-
-  <p>Topics</p>
-
-  <ul>
+  <ul class="list-group border-bottom pb-2 mb-4">
     {% for topic in topics %}
-      <li>
+      <li class="list-group-item border-0">
         <a href="{% url 'journal_records:topic' topic.id %}">{{ topic.text }}</a>
       </li>
     {% empty %}
-      <li>No topic have been added yet.</li>
+      <li class="list-group-item border-0">No topic have been added yet.</li>
     {% endfor %}
   </ul>
 
   <a href="{% url 'journal_records:new_topic' %}">Add a new topic</a>
   
-  {% endblock content %}
+{% endblock %}
