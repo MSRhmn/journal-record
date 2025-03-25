@@ -1,12 +1,11 @@
+{% load django_bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal Record</title>
-  {% load django_bootstrap5 %}
+  <title>{% block title %}Journal Record{% endblock %}</title>
   {% bootstrap_css %}
-  {% bootstrap_javascript %}
 </head>
 <body>
   <!-- This is the navbar -->
@@ -17,12 +16,12 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item"><a class="nav-link" href="{% url 'journal_records:topics' %}">Topics</a></li>
       </ul>
-
+      
       <!-- Account related links -->
       <ul class="navbar-nav ms-auto mb-2 mb-md-0">
         {% if user.is_authenticated %}
@@ -37,14 +36,14 @@
         {% endif %}
       </ul>
       {% if user.is_authenticated %}
-        <form action="{% url 'accounts:logout' %}" method="post">
-          {% csrf_token %}
-          <button name="submit" class="btn btn-outline-secondary btn-sm">Log out</button>
-        </form>
+      <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button name="submit" class="btn btn-outline-secondary btn-sm">Log out</button>
+      </form>
       {% endif %}
     </div>
   </nav>
-
+  
   <!-- The main part of the page -->
   <main class="container">
     <div class="pb-2 mb-2 border-bottom">
@@ -54,6 +53,7 @@
       {% block content %}{% endblock %}
     </div>
   </main>
-
+  
+  {% bootstrap_javascript %}
 </body>
 </html>
