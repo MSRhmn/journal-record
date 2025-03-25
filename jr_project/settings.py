@@ -31,11 +31,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    # My apps
-    "journal_records",
-    "accounts",
-    # Third party apps
-    "django_bootstrap5",
     # Default django apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -43,6 +38,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # My apps
+    "journal_records",
+    "accounts",
+    # Third party apps
+    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
