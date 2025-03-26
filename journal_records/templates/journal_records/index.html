@@ -1,13 +1,18 @@
 {% extends "journal_records/base.html" %}
 
 {% block page_header %}
-  <div class="p-3 mb-4 bg-light border rounded-3">
-    <div class="container-fluid py-4">
-      <h1 class="display-3">Track your record</h1>
+  <div class="p-5 mb-4 bg-light border rounded-3">
+    <div class="container-fluid text-center py-5">
+      <h1 class="display-4 fw-bold">Track Your Journal</h1>
       
-      <p class="lead">Write your own journal record, and keep a list of the topic you're writing about. Whenever you're writing about a new topic, make an entry summarizing about it.</p>
+      <p class="lead fw-light mx-auto" style="max-width: 700px;">
+        Write your own journal records and keep track of the topics you're exploring.  
+        For every new topic, create an entry to summarize your thoughts and progress.
+      </p>
       
-      <a class="btn btn-primary btn-lg mt-1" href="{% url 'accounts:register' %}">Register &raquo;</a>
+      <a class="btn btn-primary btn-lg mt-3 px-4" href="{% url 'accounts:register' %}">
+        Get Started &raquo;
+      </a>
     </div>
   </div>
 {% endblock %}
