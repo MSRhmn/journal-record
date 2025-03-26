@@ -28,7 +28,7 @@
         <li class="nav-item"><span class="navbar-text me-2 text-nowrap">Hello, {{ user.username }}</span></li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
+          <a class="nav-link text-nowrap" href="{% url 'accounts:login' %}">Log in</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
@@ -38,7 +38,7 @@
       {% if user.is_authenticated %}
       <form action="{% url 'accounts:logout' %}" method="post">
         {% csrf_token %}
-        <button name="submit" class="btn btn-outline-secondary btn-sm">Logout</button>
+        <button name="submit" class="btn btn-outline-secondary btn-sm text-nowrap">Log out</button>
       </form>
       {% endif %}
     </div>
