@@ -25,10 +25,10 @@
       <!-- Account related links -->
       <ul class="navbar-nav ms-auto mb-2 mb-md-0">
         {% if user.is_authenticated %}
-        <li class="nav-item"><span class="navbar-text me-2">Hello, {{ user.username }}</span></li>
+        <li class="nav-item"><span class="navbar-text me-2 text-nowrap">Hello, {{ user.username }}</span></li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'accounts:login' %}">Log in</a>
+          <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
@@ -38,7 +38,7 @@
       {% if user.is_authenticated %}
       <form action="{% url 'accounts:logout' %}" method="post">
         {% csrf_token %}
-        <button name="submit" class="btn btn-outline-secondary btn-sm">Log out</button>
+        <button name="submit" class="btn btn-outline-secondary btn-sm">Logout</button>
       </form>
       {% endif %}
     </div>
