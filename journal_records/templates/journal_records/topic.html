@@ -1,25 +1,28 @@
 {% extends "journal_records/base.html" %}
 
 {% block page_header %}
-  <h1>{{ topic.text }}</h1>
+  <h1 class="text-center">{{ topic.text }}</h1>
 {% endblock %}
 
 {% block content %}
-  <p>
-    <a href="{% url 'journal_records:new_entry' topic.id %}">Add new entry</a>
-  </p>
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="fw-bold">Entries</h3>
+    <a href="{% url 'journal_records:new_entry' topic.id %}" class="btn btn-primary">Add New Entry</a>
+  </div>
 
   {% for entry in entries %}
-    <div class="card mb-3">
-      <h4 class="card_header">
-        {{ entry.date_added|date:"M d, Y H:i" }}
-        <small><a href="{% url 'journal_records:edit_entry' entry.id %}">edit entry</a></small>
-      </h4>
-      <div class="card-body">{{ entry.text|linebreaks }}</div>
+    <div class="card shadow-sm mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center bg-light">
+        <h5 class="mb-0">{{ entry.date_added|date:"M d, Y H:i" }}</h5>
+        <a href="{% url 'journal_records:edit_entry' entry.id %}" class="btn btn-sm btn-outline-secondary">Edit</a>
+      </div>
+      <div class="card-body">
+        <p class="mb-0">{{ entry.text|linebreaks }}</p>
+      </div>
     </div>
-
   {% empty %}
-    <p>There are no entries for this topic yet.</p>
+    <div class="alert alert-warning text-center">There are no entries for this topic yet.</div>
   {% endfor %}
-
+</div>
 {% endblock %}
